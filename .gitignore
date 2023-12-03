@@ -2,3 +2,6 @@
 *.log
 advent2023.image
 advent2023.changes
+Squeaklets
+*.pr
+*.gif

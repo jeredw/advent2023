@@ -45,3 +45,25 @@ new classes or methods -- there does not seem to be dedicated grammar for this,
 I probably have to use the World menu.  Fortunately you can assign blocks
 (closures) to variables and then pass them the "value" message, so I kind of
 have procedures.  I really need to go find a tutorial or something.
+
+## Day 3
+
+Today I accidentally deleted the project for day 2 somehow.  I closed it to
+make a project for day 3, and I must've dismissed a dialog too fast -- welp.
+This is clearly a GUI built by unforgiving computer scientists.
+
+My hunch on day 2 was right.  I found a YouTube video recorded 12 years ago by
+some guy in Indiana.  As his land line telephone rang in the background, he
+explained how you can make new classes using the "Browser" window, and add
+methods there too.  Possibly this is all explained in some documentation that I
+have just overlooked because I learn about things inside out, but frankly
+watching someone use the Squeak GUI is worth 10,000 words.
+
+It is not magic, you're just doing `Object subclass`, but the Browser is where
+Squeak wants you to do it.  I thought about making some classes today to get
+named tuples, but I decided it was too much clicking for a tiny program.  Maybe
+tomorrow.
+
+Somehow, besides the now 71MB VM image, my repository has aquired more stuff.
+There is a directory called `Squeaklets` now and a .gif file with a fuzzy
+screenshot.  This is all very mysterious.
