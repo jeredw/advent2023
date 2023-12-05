@@ -67,3 +67,13 @@ tomorrow.
 Somehow, besides the now 71MB VM image, my repository has aquired more stuff.
 There is a directory called `Squeaklets` now and a .gif file with a fuzzy
 screenshot.  This is all very mysterious.
+
+## Day 4
+
+I deleted day 3 again!  I was even super careful to click "Save", but the
+project is just gone now.  It was [a really great
+project](https://www.youtube.com/watch?v=c72d4-LpilM).
+
+I remembered enough libraries that I didn't have to hunt around through docs a
+lot.  This was a pretty easy counting problem which was a nice relaxing problem
+for an early Monday.  I still have not made a new class.
