@@ -77,3 +77,23 @@ project](https://www.youtube.com/watch?v=c72d4-LpilM).
 I remembered enough libraries that I didn't have to hunt around through docs a
 lot.  This was a pretty easy counting problem which was a nice relaxing problem
 for an early Monday.  I still have not made a new class.
+
+## Day 5
+
+Ok, I think the trick is not to "close" the day N-1 project, but just to go
+"back" to the parent project.  I finally managed to keep my day 4 project.
+
+Today's problem was finicky enough that I had to debug my program.  When
+something went wrong, a stack trace window popped up and let me see the error a
+couple levels down from my user code.  But I couldn't tell how to see the
+values of my variables.  And the transcript kept printing out messages about
+stuff not being defined, as if it kept going for a few seconds after the error.
+I will have to figure this out in coming days.
+
+Most of my mysterious bugs were to do with parentheses.  Smalltalk seems to
+have really limited arithmetic precedence, and I found I was better off just
+extracting subexpressions when it got too tricky.
+
+I found myself wishing `Interval` had a few more convenience methods for
+interval arithmetic, and I think if I were a real Smalltalk person, I would
+probably have just added them and made my program nicer.
