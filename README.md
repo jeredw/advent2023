@@ -97,3 +97,10 @@ extracting subexpressions when it got too tricky.
 I found myself wishing `Interval` had a few more convenience methods for
 interval arithmetic, and I think if I were a real Smalltalk person, I would
 probably have just added them and made my program nicer.
+
+## Day 6
+
+Today's problem involved finding zeros of a function.  I thought about writing
+a binary search, and learned about the `^` operator which lets you return from
+within a nested block.  But because the function was just a quadratic I decided
+to use the quadratic formula and call it a day.
