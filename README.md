@@ -104,3 +104,29 @@ Today's problem involved finding zeros of a function.  I thought about writing
 a binary search, and learned about the `^` operator which lets you return from
 within a nested block.  But because the function was just a quadratic I decided
 to use the quadratic formula and call it a day.
+
+## Day 7
+
+Today I finally made a class, `Hand`, with some real methods and some simple
+tests (and I did `fileOut` so you can see them, too).  For some reason Squeak
+wanted me to type my initials when I made these classes, to certify that I was
+me.  But my initials were the same as someone else's so it asked if I could
+please append some more initials to clarify?  Fortunately I have a middle name.
+I really hope nobody else gets my crappy Smalltalk objects in their Squeak
+somehow now.
+
+Things seemed to be going well, but then I accidentally added an accessor
+method `cards` that did `^ self cards` and hilarity ensued when it tail
+recursed infinitely and hung.  So I quit the VM, and it reopend on Day 2 with
+none of my work saved, and I got to start over.  At least I learned that
+`Cmd + .` is the "interrupt" key.
+
+For some reason half way through the problem, Squeak decided to start
+formatting my code for me and renamed all my local variables `t1 t2 t3...`
+instead of using the nice names I'd chosen.  This was deeply strange.  I
+probably pressed a button?  I liked my names!
+
+At another point, Squeak decided that anything that involved I/O would hang
+(but I knew about `Cmd + .` now, so I could recover).  It would print out any
+expression, but it would not print things to the transcript, read files or list
+them.  Fortunately when I restarted the VM again, it was happy.  Oh, Squeak.
