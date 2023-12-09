@@ -148,3 +148,11 @@ nicely set up for this, so I wrote a Floyd [cycle
 detector](https://en.wikipedia.org/wiki/Cycle_detection) and a bunch of messy
 arithmetic about which the less said, the better.  I guess it was good practice
 with the language, though.
+
+## Day 9
+
+Today was a super easy problem with forward differences of sequences.  It was
+so easy, Squeak did not even crash once.  Maybe I was supposed to do this in a
+harder way?  Now I am reading about
+[Binomial transforms](https://en.wikipedia.org/wiki/Binomial_transform) and the
+[Nørlund–Rice integral](https://en.wikipedia.org/wiki/N%C3%B8rlund%E2%80%93Rice_integral).
