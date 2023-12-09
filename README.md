@@ -1,5 +1,7 @@
 # Advent of code 2023
 
+![Screenshot of my Squeak desktop](desktop.png)
+
 Let's try Smalltalk this year!  I think I read a book about Smalltalk-80 over
 20 years ago, but I remember almost nothing about it, so this should be fun.
 
