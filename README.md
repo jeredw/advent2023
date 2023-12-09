@@ -130,3 +130,21 @@ At another point, Squeak decided that anything that involved I/O would hang
 (but I knew about `Cmd + .` now, so I could recover).  It would print out any
 expression, but it would not print things to the transcript, read files or list
 them.  Fortunately when I restarted the VM again, it was happy.  Oh, Squeak.
+
+## Day 8
+
+Days since Squeak ate my code: _0_.
+
+Today opensmalltalk-vm spit out a crash dump!  Apparently when things went pear
+shaped it was trying to `commenceCogCompiledCodeCompaction` which sounds
+alliterative?  The GUI locked up and not even `Cmd + .` would save me, and of
+course, it ate my homework again.  An autosave feature would be killer.  I kept
+the dump so I could poke around in the VM later out of morbid curiosity.  Sigh,
+Squeak.
+
+The problem today was just about finding when some cycles coincided using the
+lcm of their periods.  At first I didn't realize the input graph had been
+nicely set up for this, so I wrote a Floyd [cycle
+detector](https://en.wikipedia.org/wiki/Cycle_detection) and a bunch of messy
+arithmetic about which the less said, the better.  I guess it was good practice
+with the language, though.

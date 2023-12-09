@@ -1,0 +1,379 @@
+
+Bus error Fri Dec  8 16:52:17 2023
+
+
+VM: 202206021410 runner@Mac-1654184818873.local:work/opensmalltalk-vm/opensmalltalk-vm
+Date: Thu Jun 2 16:10:44 2022 CommitHash: c9fd365
+Plugins: 202206021410 runner@Mac-1654184818873.local:work/opensmalltalk-vm/opensmalltalk-vm
+
+C stack backtrace & registers:
+     x0    0x100914657  x1    0x106cadab0  x2       0x19e551  x3            0x2
+     x4     0x1b588bb3  x5        0x7ec30  x6           0x20  x7    0x100937e50
+     x8    0x16f58d0a8  x9     0x1b588bb3 x10    0x106e4c000 x11 0xffffffffffffffff
+    x12 0xffffffffffffffff x13          0x100 x14       0x206400 x15     0x17fc6d7a
+    x16     0x17fc6d7a x17    0x181abf820 x18    0x100937e58 x19            0x0
+    x20 0xdc86ad976c5ad x21    0x10092b000 x22    0x100939000 x23    0x10092b000
+    x24    0x10092b000 x25    0x10092b000 x26            0x0 x27    0x106ced6b0
+    x29            0x0  fp    0x10092bb40  lr    0x16f58d1b0  sp    0x1008581fc
+0   libsystem_platform.dylib            0x0000000181abf848 sys_icache_invalidate + 40
+1   Squeak                              0x00000001008a4c9c reportStackState + 840
+2   Squeak                              0x00000001008a5000 sigsegv + 208
+3   libsystem_platform.dylib            0x0000000181abda24 _sigtramp + 56
+4   Squeak                              0x00000001008581fc commenceCogCompiledCodeCompaction + 204
+5   Squeak                              0x0000000100822c6c checkForEventsMayContextSwitch + 108
+6   Squeak                              0x000000010082210c activateNewCogMethodinInterpreter + 436
+7   Squeak                              0x00000001008263c4 ceSendFromInLineCacheMiss + 416
+8   ???                                 0x0000000106cac6f4 0x0 + 4408919796
+9   Squeak                              0x0000000100815268 interpret + 660
+10  Squeak                              0x00000001008a6488 -[sqSqueakMainApplication runSqueak] + 424
+11  Foundation                          0x0000000182d237bc __NSFirePerformWithOrder + 296
+12  CoreFoundation                      0x0000000181b6b0cc __CFRUNLOOP_IS_CALLING_OUT_TO_AN_OBSERVER_CALLBACK_FUNCTION__ + 36
+13  CoreFoundation                      0x0000000181b6afb8 __CFRunLoopDoObservers + 532
+14  CoreFoundation                      0x0000000181b6a5e8 __CFRunLoopRun + 776
+15  CoreFoundation                      0x0000000181b69c2c CFRunLoopRunSpecific + 608
+16  HIToolbox                           0x000000018c0c2448 RunCurrentEventLoopInMode + 292
+17  HIToolbox                           0x000000018c0c20d8 ReceiveNextEventCommon + 220
+18  HIToolbox                           0x000000018c0c1fdc _BlockUntilNextEventMatchingListInModeWithFilter + 76
+19  AppKit                              0x0000000185344f90 _DPSNextEvent + 660
+20  AppKit                              0x0000000185b18b94 -[NSApplication(NSEventRouting) _nextEventMatchingEventMask:untilDate:inMode:dequeue:] + 716
+21  AppKit                              0x000000018533843c -[NSApplication run] + 476
+22  AppKit                              0x000000018530f708 NSApplicationMain + 880
+23  dyld                                0x0000000181715058 start + 2224
+
+
+Smalltalk stack dump:
+0x16f5a6e48 M TTGlyphForm(DisplayMedium)>fill:fillColor: 0x1383096c8: a(n) TTGlyphForm
+0x16f5a6e88 M TTGlyphForm(DisplayMedium)>fillColor: 0x1383096c8: a(n) TTGlyphForm
+0x16f5a6f08 M TTGlyph>asFormWithScale:ascender:descender:fgColor:bgColor:depth:replaceColor:lineGlyph:lineGlyphWidth:emphasis: 0x138956468: a(n) TTGlyph
+0x16f5a6fa0 M TTFontDescription>renderGlyph:height:extraScale:fgColor:bgColor:depth:lineGlyph:lineGlyphWidth:emphasis: 0x13925bf98: a(n) TTFontDescription
+0x16f5a7018 M TTFontDescription>renderGlyph:height:extraScale:fgColor:bgColor:depth: 0x13925bf98: a(n) TTFontDescription
+0x16f5a7078 M TTCFont>computeForm: 0x13ab0c698: a(n) TTCFont
+0x16f5a70b8 M TTCFont>characterFormAtCode: 0x13ab0c698: a(n) TTCFont
+0x16f5a70f0 M TTCFont>characterFormAt: 0x13ab0c698: a(n) TTCFont
+0x16f5a7128 M TTCFont>widthOf: 0x13ab0c698: a(n) TTCFont
+0x16f5a7178 M TTCFont(AbstractFont)>widthOfString:from:to: 0x13ab0c698: a(n) TTCFont
+0x16f5a71c0 M TTCFont(AbstractFont)>widthOfString: 0x13ab0c698: a(n) TTCFont
+0x16f5a7200 M StringMorph>measureContents 0x138305380: a(n) StringMorph
+0x16f5a7238 M StringMorph>fitContents 0x138305380: a(n) StringMorph
+0x16f5a7268 M StringMorph>initializeFromString: 0x138305380: a(n) StringMorph
+0x16f598cd8 M StringMorph>initWithContents:font:emphasis: 0x138305380: a(n) StringMorph
+0x16f598d20 M StringMorph class>contents:font: 0x138bf04d0: a(n) StringMorph
+0x16f598d80 M ProjectViewMorph>drawOn: 0x1380ff890: a(n) ProjectViewMorph
+0x16f598db8 M FormCanvas(Canvas)>draw: 0x1382eac28: a(n) FormCanvas
+0x16f598df0 M FormCanvas(Canvas)>drawMorph: 0x1382eac28: a(n) FormCanvas
+0x16f598e28 M ProjectViewMorph(Morph)>fullDrawOn: 0x1380ff890: a(n) ProjectViewMorph
+0x16f598e60 M FormCanvas(Canvas)>fullDraw: 0x1382eac28: a(n) FormCanvas
+0x16f598e98 M FormCanvas(Canvas)>fullDrawMorph: 0x1382eac28: a(n) FormCanvas
+0x16f598ed0 M [] in ProjectViewMorph>imageForm:forRectangle: 0x1380ff890: a(n) ProjectViewMorph
+0x16f598f08 M FormCanvas>translateBy:during: 0x1382db3e8: a(n) FormCanvas
+0x16f598f50 M ProjectViewMorph(Morph)>imageForm:forRectangle: 0x1380ff890: a(n) ProjectViewMorph
+0x16f598f90 M ProjectViewMorph(Morph)>imageFormForRectangle: 0x1380ff890: a(n) ProjectViewMorph
+0x16f598fc8 M ProjectViewMorph(Morph)>imageForm 0x1380ff890: a(n) ProjectViewMorph
+0x16f599008 I InternalThreadNavigationMorph class>sorterFormForProject:sized: 0x138bf20a8: a(n) InternalThreadNavigationMorph
+0x16f599070 I InternalThreadNavigationMorph class>cacheThumbnailFor: 0x138bf20a8: a(n) InternalThreadNavigationMorph
+0x16f5990c0 I MorphicProject>makeThumbnail 0x13bb4bf60: a(n) MorphicProject
+0x16f599120 I MorphicProject(Project)>enter:revert:saveForRevert: 0x13bc02b90: a(n) MorphicProject
+0x16f599178 I ProjectViewMorph>enter 0x13bc01d28: a(n) ProjectViewMorph
+0x16f5991b8 I ProjectViewMorph>mouseUp: 0x13bc01d28: a(n) ProjectViewMorph
+0x16f5991f0 M ProjectViewMorph(Morph)>handleMouseUp: 0x13bc01d28: a(n) ProjectViewMorph
+0x16f599228 M MouseButtonEvent>sentTo: 0x1380fd7b8: a(n) MouseButtonEvent
+0x16f599268 M ProjectViewMorph(Morph)>handleEvent: 0x13bc01d28: a(n) ProjectViewMorph
+0x16f590ca0 M ProjectViewMorph(Morph)>handleFocusEvent: 0x13bc01d28: a(n) ProjectViewMorph
+0x16f590ce8 M MorphicEventDispatcher>doHandlingForFocusEvent:with: 0x1380fead8: a(n) MorphicEventDispatcher
+0x16f590d30 M MorphicEventDispatcher>dispatchFocusEvent:with: 0x1380fead8: a(n) MorphicEventDispatcher
+0x16f590d70 M ProjectViewMorph(Morph)>processFocusEvent:using: 0x13bc01d28: a(n) ProjectViewMorph
+0x16f590db0 M ProjectViewMorph(Morph)>processFocusEvent: 0x13bc01d28: a(n) ProjectViewMorph
+0x16f590e00 M [] in HandMorph>sendFocusEvent:to:clear: 0x13bb0ea90: a(n) HandMorph
+0x16f590e48 M [] in ActiveEventVariable class>value:during: 0x1390ecde0: a(n) ActiveEventVariable
+0x16f590e88 M FullBlockClosure(BlockClosure)>ensure: 0x1380feb40: a(n) FullBlockClosure
+0x16f590ed8 M ActiveEventVariable class(DynamicVariable class)>value:during: 0x1390ecde0: a(n) ActiveEventVariable
+0x16f590f28 M [] in ActiveEventVariable class>value:during: 0x1390ecde0: a(n) ActiveEventVariable
+0x16f590f68 M FullBlockClosure(BlockClosure)>ensure: 0x1380fec88: a(n) FullBlockClosure
+0x16f590fa8 M ActiveEventVariable class>value:during: 0x1390ecde0: a(n) ActiveEventVariable
+0x16f590fe8 M MouseButtonEvent(MorphicEvent)>becomeActiveDuring: 0x138004350: a(n) MouseButtonEvent
+0x16f591038 M [] in HandMorph>sendFocusEvent:to:clear: 0x13bb0ea90: a(n) HandMorph
+0x16f591080 M [] in ActiveHandVariable class>value:during: 0x1390ece80: a(n) ActiveHandVariable
+0x16f5910c0 M FullBlockClosure(BlockClosure)>ensure: 0x1380feea8: a(n) FullBlockClosure
+0x16f591110 M ActiveHandVariable class(DynamicVariable class)>value:during: 0x1390ece80: a(n) ActiveHandVariable
+0x16f591160 M [] in ActiveHandVariable class>value:during: 0x1390ece80: a(n) ActiveHandVariable
+0x16f5911a0 M FullBlockClosure(BlockClosure)>ensure: 0x1380feff0: a(n) FullBlockClosure
+0x16f5911e0 M ActiveHandVariable class>value:during: 0x1390ece80: a(n) ActiveHandVariable
+0x16f591220 M HandMorph>becomeActiveDuring: 0x13bb0ea90: a(n) HandMorph
+0x16f591270 M [] in HandMorph>sendFocusEvent:to:clear: 0x13bb0ea90: a(n) HandMorph
+0x16f59ab80 M [] in ActiveWorldVariable class>value:during: 0x1390ecf20: a(n) ActiveWorldVariable
+0x16f59abc0 M FullBlockClosure(BlockClosure)>ensure: 0x13d3c46b8: a(n) FullBlockClosure
+0x16f59ac10 M ActiveWorldVariable class(DynamicVariable class)>value:during: 0x1390ecf20: a(n) ActiveWorldVariable
+0x16f59ac60 M [] in ActiveWorldVariable class>value:during: 0x1390ecf20: a(n) ActiveWorldVariable
+0x16f59aca0 M FullBlockClosure(BlockClosure)>ensure: 0x13c168ee0: a(n) FullBlockClosure
+0x16f59ace0 M ActiveWorldVariable class>value:during: 0x1390ecf20: a(n) ActiveWorldVariable
+0x16f59ad20 M PasteUpMorph>becomeActiveDuring: 0x13bb489a0: a(n) PasteUpMorph
+0x16f59ad68 M HandMorph>sendFocusEvent:to:clear: 0x13bb0ea90: a(n) HandMorph
+0x16f59adc0 M HandMorph>sendEvent:focus:clear: 0x13bb0ea90: a(n) HandMorph
+0x16f59ae08 M HandMorph>sendMouseEvent: 0x13bb0ea90: a(n) HandMorph
+0x16f59ae48 M HandMorph>handleEvent: 0x13bb0ea90: a(n) HandMorph
+0x16f59ae98 M HandMorph>processEvents 0x13bb0ea90: a(n) HandMorph
+0x16f59aed8 M [] in WorldState>doOneCycleNowFor: 0x13bb10b88: a(n) WorldState
+0x16f59af20 M [] in ActiveHandVariable class>value:during: 0x1390ece80: a(n) ActiveHandVariable
+0x16f59af60 M FullBlockClosure(BlockClosure)>ensure: 0x13d3c4ad0: a(n) FullBlockClosure
+0x16f59afb0 M ActiveHandVariable class(DynamicVariable class)>value:during: 0x1390ece80: a(n) ActiveHandVariable
+0x16f59b000 M [] in ActiveHandVariable class>value:during: 0x1390ece80: a(n) ActiveHandVariable
+0x16f59b040 M FullBlockClosure(BlockClosure)>ensure: 0x13d3c4c18: a(n) FullBlockClosure
+0x16f59b080 M ActiveHandVariable class>value:during: 0x1390ece80: a(n) ActiveHandVariable
+0x16f59b0c0 M HandMorph>becomeActiveDuring: 0x13bb0ea90: a(n) HandMorph
+0x16f59b100 M [] in WorldState>doOneCycleNowFor: 0x13bb10b88: a(n) WorldState
+0x16f59b148 M Array(SequenceableCollection)>do: 0x13bb04768: a(n) Array
+0x16f59b180 M WorldState>handsDo: 0x13bb10b88: a(n) WorldState
+0x16f59b1c0 M WorldState>doOneCycleNowFor: 0x13bb10b88: a(n) WorldState
+0x16f59b1f8 M WorldState>doOneCycleFor: 0x13bb10b88: a(n) WorldState
+0x16f59b230 M PasteUpMorph>doOneCycle 0x13bb489a0: a(n) PasteUpMorph
+0x16f59b270 I [] in MorphicProject>spawnNewProcess 0x13bb4bf60: a(n) MorphicProject
+     0x13c0bf820 s [] in FullBlockClosure(BlockClosure)>newProcess
+
+Most recent primitives
+BitBlt>>#copyBits
+BitBlt>>#copyBits
+BitBlt>>#copyBits
+BitBlt>>#copyBits
+BitBlt>>#copyBits
+BitBlt>>#copyBits
+BitBlt>>#copyBits
+BitBlt>>#copyBits
+Behavior>>#basicNew
+**StackOverflow**
+BitBlt>>#copyBits
+BitBlt>>#copyBits
+BitBlt>>#copyBits
+BitBlt>>#copyBits
+SmallInteger>>#+
+SmallInteger>>#-
+SmallInteger>>#//
+Number>>#@
+SmallInteger>>#-
+SmallInteger>>#//
+SmallInteger>>#+
+Number>>#@
+BitBlt>>#copyBits
+BitBlt>>#copyBits
+BitBlt>>#copyBits
+BitBlt>>#copyBits
+BitBlt>>#copyBits
+BitBlt>>#copyBits
+BitBlt>>#copyBits
+BitBlt>>#copyBits
+BitBlt>>#copyBits
+BitBlt>>#copyBits
+BitBlt>>#copyBits
+SmallInteger>>#+
+SmallInteger>>#-
+SmallInteger>>#//
+SmallInteger>>#-
+SmallInteger>>#//
+SmallInteger>>#+
+BitBlt>>#copyBits
+BitBlt>>#copyBits
+BitBlt>>#copyBits
+BitBlt>>#copyBits
+BitBlt>>#copyBits
+BitBlt>>#copyBits
+BitBlt>>#copyBits
+BitBlt>>#copyBits
+BitBlt>>#copyBits
+BitBlt>>#copyBits
+BitBlt>>#copyBits
+BitBlt>>#copyBits
+BitBlt>>#copyBits
+BitBlt>>#copyBits
+BitBlt>>#copyBits
+BitBlt>>#copyBits
+BitBlt>>#copyBits
+BitBlt>>#copyBits
+BitBlt>>#copyBits
+BitBlt>>#copyBits
+BitBlt>>#copyBits
+BitBlt>>#copyBits
+BitBlt>>#copyBits
+BitBlt>>#copyBits
+BitBlt>>#copyBits
+BitBlt>>#copyBits
+BitBlt>>#copyBits
+BitBlt>>#copyBits
+BitBlt>>#copyBits
+BitBlt>>#copyBits
+BitBlt>>#copyBits
+BitBlt>>#copyBits
+BitBlt>>#copyBits
+BitBlt>>#copyBits
+BitBlt>>#copyBits
+BitBlt>>#copyBits
+FullBlockClosure>>#value
+SmallInteger>>#-
+SmallInteger>>#//
+SmallInteger>>#+
+SmallInteger>>#-
+SmallInteger>>#//
+SmallInteger>>#+
+Number>>#@
+BitBlt>>#copyBits
+FullBlockClosure>>#value
+SmallInteger>>#/
+**PrimitiveFailure** SmallInteger
+Behavior>>#basicNew
+SmallInteger>>#<
+SmallInteger>>#\\
+SmallInteger>>#//
+SmallInteger>>#//
+SmallInteger>>#/
+**PrimitiveFailure** SmallInteger
+Object>>#species
+Object>>#perform:with:
+SmallInteger>>#=
+SmallInteger>>#=
+SmallInteger>>#//
+SmallInteger>>#//
+SmallInteger>>#*
+SmallInteger>>#//
+SmallInteger>>#//
+SmallInteger>>#*
+SmallInteger>>#//
+SmallInteger>>#//
+SmallInteger>>#*
+SmallInteger>>#quo:
+Number>>#@
+Behavior>>#basicNew:
+Behavior>>#basicNew
+SmallInteger>>#=
+Number>>#@
+Number>>#@
+Object>>#at:
+Object>>#at:
+SmallInteger>>#*
+Object>>#at:
+SmallInteger>>#*
+Object>>#at:
+SmallInteger>>#*
+Object>>#at:
+SmallInteger>>#*
+Object>>#at:
+SmallInteger>>#*
+Object>>#at:
+SmallInteger>>#*
+Object>>#at:
+SmallInteger>>#*
+Object>>#at:
+SmallInteger>>#*
+WarpBlt>>#warpBitsSmoothing:sourceMap:
+SmallInteger>>#/
+**PrimitiveFailure** SmallInteger
+SmallInteger>>#/
+**PrimitiveFailure** SmallInteger
+Number>>#@
+**PrimitiveFailure** Fraction
+Behavior>>#basicNew
+Object>>#perform:with:
+Behavior>>#basicNew:
+Object>>#at:
+FullBlockClosure>>#value
+SmallInteger>>#bitShift:
+SmallInteger>>#=
+WarpBlt>>#warpBitsSmoothing:sourceMap:
+Number>>#@
+SmallInteger>>#*
+SmallInteger>>#*
+SmallInteger>>#+
+ArrayedCollection>>#size
+Number>>#@
+SmallInteger>>#*
+SmallInteger>>#*
+SmallInteger>>#//
+Object>>#at:
+Object>>#at:
+Array>>#new:
+ArrayedCollection>>#size
+Object>>#at:
+**StackOverflow**
+ArrayedCollection>>#size
+SmallInteger>>#\\
+Object>>#at:
+Object>>#at:put:
+**StackOverflow**
+**StackOverflow**
+**StackOverflow**
+**StackOverflow**
+**StackOverflow**
+Number>>#@
+Object>>#species
+Object>>#species
+Behavior>>#basicNew
+Behavior>>#basicNew:
+Behavior>>#basicNew
+WarpBlt>>#warpBitsSmoothing:sourceMap:
+ArrayedCollection>>#size
+ArrayedCollection>>#size
+Behavior>>#basicNew:
+Bitmap>>#compress:toByteArray:
+ArrayedCollection>>#size
+Behavior>>#basicNew:
+Behavior>>#basicNew
+Number>>#@
+Number>>#@
+FullBlockClosure>>#value:
+Behavior>>#basicNew
+**StackOverflow**
+BitBlt>>#copyBits
+BitBlt>>#copyBits
+BitBlt>>#copyBits
+BitBlt>>#copyBits
+BitBlt>>#copyBits
+FullBlockClosure>>#value
+**StackOverflow**
+Array>>#atWrap:
+**PrimitiveFailure** Array
+**PrimitiveFailure** Array
+Array>>#atWrap:
+**PrimitiveFailure** Array
+**PrimitiveFailure** Array
+Array>>#atWrap:
+**PrimitiveFailure** Array
+**PrimitiveFailure** Array
+**StackOverflow**
+**StackOverflow**
+SmallInteger>>#-
+SmallInteger>>#//
+Object>>#basicSize
+Object>>#basicAt:
+SmallInteger>>#-
+SmallInteger>>#*
+SmallInteger>>#-
+Object>>#at:
+SmallInteger>>#=
+SmallInteger>>#asFloat
+SmallInteger>>#-
+SmallFloat64>>#/
+SmallInteger>>#*
+**PrimitiveFailure** SmallInteger
+Object>>#perform:with:
+SmallFloat64>>#*
+SmallInteger>>#-
+**PrimitiveFailure** SmallInteger
+SmallFloat64>>#*
+SmallFloat64>>#truncated
+Number>>#@
+SmallFloat64>>#*
+SmallInteger>>#-
+SmallInteger>>#-
+SmallInteger>>#+
+Number>>#@
+SmallInteger>>#-
+Number>>#@
+SmallFloat64>>#truncated
+SmallFloat64>>#>
+SmallInteger>>#+
+Number>>#@
+Number>>#@
+Number>>#@
+Behavior>>#basicNew:
+**CompactCode**
+
+stack page bytes 8192 available headroom 5576 minimum unused headroom 5992
+
+	(Bus error)
