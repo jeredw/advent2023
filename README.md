@@ -158,3 +158,18 @@ so easy, Squeak did not even crash once.  Maybe I was supposed to do this in a
 harder way?  Now I am reading about
 [Binomial transforms](https://en.wikipedia.org/wiki/Binomial_transform) and the
 [Nørlund–Rice integral](https://en.wikipedia.org/wiki/N%C3%B8rlund%E2%80%93Rice_integral).
+
+## Day 10
+
+Today was just fun, with hardly any Squeak drama.
+
+Today we had to orient a loop in a grid and find its area.  My first idea was
+to keep track of cells left or right of the loop, and then flood fill those
+sets using the heuristic that edge cells are always outside.  But this was both
+pretty complicated, and missed some island cells "behind" loop turns.
+
+So I remembered back to polygon rasterization and used the [even-odd
+rule](https://en.wikipedia.org/wiki/Even%E2%80%93odd_rule) scanning from left
+to right.  At first this didn't work because my parity metric counted all
+corners as vertical crossings, but eventually I realized that `┌ ... ┐` runs
+did not change sidedness but `┌ ... ┘` did.
