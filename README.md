@@ -173,3 +173,9 @@ rule](https://en.wikipedia.org/wiki/Even%E2%80%93odd_rule) scanning from left
 to right.  At first this didn't work because my parity metric counted all
 corners as vertical crossings, but eventually I realized that `┌ ... ┐` runs
 did not change sidedness but `┌ ... ┘` did.
+
+## Day 11
+
+I am too tired to make classes today, so I just typed stuff into the workspace.
+Squeak don't care.  Squeak's got my back today.  I kind of like programming in
+a non-monospace font.  I wish this language had less colons in it.
