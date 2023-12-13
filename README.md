@@ -179,3 +179,33 @@ did not change sidedness but `┌ ... ┘` did.
 I am too tired to make classes today, so I just typed stuff into the workspace.
 Squeak don't care.  Squeak's got my back today.  I kind of like programming in
 a non-monospace font.  I wish this language had less colons in it.
+
+## Day 12
+
+While it is true that Smalltalk blocks are like closures, the "method return"
+`^` operator does not seem to do quite what you would hope inside a recursive
+block invocation.
+
+```smalltalk
+test := [:x |
+	(x = 0) ifTrue: [^1].
+	test value: (x-1).
+	^42
+].
+test value: 5.
+```
+
+You might reasonably expect this block to recurse 5 times and then return 42,
+but in fact it recurses 5 times and returns 1!  In a class method, this
+behavior doesn't seem to happen, and `^` really acts like method return.  _Ask
+me how I know._
+
+This tricked me so hard that I gave up on counting, and did the first part of
+today's problem by enumerating all possibilities and testing matches with a
+regular expression!  There were too many possibilities to enumerate in part
+two, so I hunkered down and spent an hour trying stupid combinatorial tricks to
+avoid debugging.  I finally gave up, figured out what Smalltalk was doing to
+me, and moved my block to a memoized recursive class method.
+
+I am a little embarrassed by how long this took today, but I guess I learned
+more interesting properties of the `^` operator.  Very tired now.
