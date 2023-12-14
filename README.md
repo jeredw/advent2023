@@ -209,3 +209,10 @@ me, and moved my block to a memoized recursive class method.
 
 I am a little embarrassed by how long this took today, but I guess I learned
 more interesting properties of the `^` operator.  Very tired now.
+
+## Day 13
+
+Today I found the `Matrix` collection, which is nice.  I almost got bitten by
+my nemesis the `^` operator again, but I learned my lesson yesterday and made a
+class right quick.  I didn't really want to make a class, I just wanted a
+function, but you work with what you got.
