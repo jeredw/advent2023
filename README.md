@@ -216,3 +216,12 @@ Today I found the `Matrix` collection, which is nice.  I almost got bitten by
 my nemesis the `^` operator again, but I learned my lesson yesterday and made a
 class right quick.  I didn't really want to make a class, I just wanted a
 function, but you work with what you got.
+
+## Day 14
+
+I a really cool Smalltalk moment today.  At one point while debugging
+something, I printed out a matrix (by highlighting some code and then selecting
+"Print it").  This puts some blue text into the workspace.  I happened to hover
+over this text and click it, and a window popped up showing the actual object!
+The text wasn't just... text.  It was really the object, and acted as a link to
+an inspector to go look at it.  Wild.
