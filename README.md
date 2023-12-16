@@ -230,7 +230,8 @@ an inspector to go look at it.  Wild.
 
 I wish I had a nice comprehensive reference for Squeak's collections library.
 The Browser is just too confusing sometimes, especially since there are no docs
-or types and have to just read the code for each method to see what it does.
+or types and you have to just read the code for each method to see what it
+does.
 
 Today I wanted to find the first index matching a predicate in a collection,
 so I went poking through `SequenceableCollection`.  It has a whole circus of
