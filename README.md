@@ -219,9 +219,25 @@ function, but you work with what you got.
 
 ## Day 14
 
-I a really cool Smalltalk moment today.  At one point while debugging
+I had a really cool Smalltalk moment today.  At one point while debugging
 something, I printed out a matrix (by highlighting some code and then selecting
 "Print it").  This puts some blue text into the workspace.  I happened to hover
 over this text and click it, and a window popped up showing the actual object!
 The text wasn't just... text.  It was really the object, and acted as a link to
 an inspector to go look at it.  Wild.
+
+## Day 15
+
+I wish I had a nice comprehensive reference for Squeak's collections library.
+The Browser is just too confusing sometimes, especially since there are no docs
+or types and have to just read the code for each method to see what it does.
+
+Today I wanted to find the first index matching a predicate in a collection,
+so I went poking through `SequenceableCollection`.  It has a whole circus of
+cool utilities, like `atWrap:` (wrapping indexing), `combinations:atATimeDo:`
+(iterating over combinations), and `changeOfChangesInSlopes:` (honestly not
+sure).  Surprisingly though, I couldn't find what I wanted, so I just wrote a
+loop using `withIndexDo:` like a cave man.
+
+Belatedly, I went back and found `findFirst:`, which makes a ton of sense and
+probably comes up more often than `changeOfChangesInSlopes:`.
