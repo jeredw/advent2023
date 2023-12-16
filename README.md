@@ -242,3 +242,9 @@ loop using `withIndexDo:` like a cave man.
 
 Belatedly, I went back and found `findFirst:`, which makes a ton of sense and
 probably comes up more often than `changeOfChangesInSlopes:`.
+
+## Day 16
+
+I just solved part two by brute force today, but precomputing or caching traces
+for each widget in each direction might have been a fun way to do it if the
+problem size had been larger.
