@@ -248,3 +248,15 @@ probably comes up more often than `changeOfChangesInSlopes:`.
 I just solved part two by brute force today, but precomputing or caching traces
 for each widget in each direction might have been a fun way to do it if the
 problem size had been larger.
+
+## Day 17
+
+Another day, another grid.  This would have been a fun year for APL.
+
+I thought we might need A* today, but a best-first search was good enough.  It
+seems like the Smalltalk convention is for user types to provide a total order
+`<=` rather than a strict weak order `<` for stuff like sorting and heapifying,
+which I haven't really seen before.
+
+I hope we get some emulation type problems this year, I think those would be
+fun in this language.  Curious to go poke at the VM more.
