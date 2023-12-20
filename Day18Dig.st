@@ -1,11 +1,11 @@
-﻿'From Squeak6.0 of 5 July 2022 [latest update: #22104] on 19 December 2023 at 2:00:13 am'!
+﻿'From Squeak6.0 of 5 July 2022 [latest update: #22104] on 19 December 2023 at 4:27:47 pm'!
 Object subclass: #Day18Dig
 	instanceVariableNames: 'vertices edges corners startDir prevDir pos directions'
 	classVariableNames: ''
 	poolDictionaries: ''
 	category: 'as yet unclassified'!
 
-!Day18Dig methodsFor: 'as yet unclassified' stamp: 'jaw 12/19/2023 01:58'!
+!Day18Dig methodsFor: 'as yet unclassified' stamp: 'jaw 12/19/2023 16:26'!
 area
 	|sum rowSum xs ys lastY|
 	sum := 0.
@@ -19,52 +19,58 @@ area
 		parity := 0.
 		lastCorner := $/.
 		lastX := xs first.
-		xs do: [:x | |c|
+		xs do: [:x | |c span|
 			c := self findAt: x@y.
+			span := x - lastX. "(lastX, x]"
 			(c = $/) ifFalse: [
 				(c = $|) ifTrue: [
-					rowSum := rowSum + 1.
-					(parity odd) ifTrue: [rowSum := rowSum + (x - lastX) - 1].
+					(parity odd) ifTrue: [	"....|, left inside"
+						rowSum := rowSum + span - 1	"fill left"
+					].
+					rowSum := rowSum + 1.	"fill beneath |"
 					parity := parity + 1
 				].
 				('F7LJ' includes: c) ifTrue: [
-					($/ = lastCorner) ifFalse: [
-						(lastCorner = $F) ifTrue: [
-							(parity even) ifTrue: [
-								rowSum := rowSum + (x - lastX) + 1.
-							] ifFalse: [
-								(c = $7) ifTrue: [
-									rowSum := rowSum + 2.
-									sum := sum + (x - lastX) - 1.
-								] ifFalse: [
-									rowSum := rowSum + 1.
-									sum := sum + (x - lastX).
-								].
-							].
-						].
-						((lastCorner ~= $F) & (c = $7)) ifTrue: [
-							(parity even) ifTrue: [
-								sum := sum + (x - lastX).
-								rowSum := rowSum + 1.
-							] ifFalse: [
-								rowSum := rowSum + (x - lastX) + 1.
-							].
-						].
-						((lastCorner ~= $F) & (c ~= $7)) ifTrue: [
-							(parity even) ifTrue: [
-								sum := sum + (x - lastX) + 1.
-							] ifFalse: [
-								rowSum := rowSum + (x - lastX) + 1.
-							].
-						].
-						((lastCorner = $F) & (c = $J)) ifTrue: [parity := parity + 1].
-						((lastCorner = $L) & (c = $7)) ifTrue: [parity := parity + 1].
-						lastCorner := $/.
-					] ifTrue: [
-						(parity odd) ifTrue: [
-							rowSum := rowSum + (x - lastX) - 1.
+					($/ = lastCorner) ifTrue: [
+						(parity odd) ifTrue: [	"....C, left inside"
+							rowSum := rowSum + span - 1	"fill left"
 						].
 						lastCorner := c.
+					] ifFalse: [
+						(lastCorner = $F) & (c = $7) ifTrue: [
+							(parity even) ifTrue: [	"F---7, left outside"
+								rowSum := rowSum + span + 1.	"fill beneath edge"
+							] ifFalse: [	"F---7, left inside"
+								rowSum := rowSum + 2.	"fill beneath corners"
+								sum := sum + span - 1.	"fill boundary (this row)"
+							].
+						].
+						(lastCorner = $F) & (c = $J) ifTrue: [
+							(parity even) ifTrue: [	"F---J, left outside"
+								rowSum := rowSum + span + 1.	"fill beneath edge"
+							] ifFalse: [	"F---J, left inside"
+								rowSum := rowSum + 1.	"fill beneath F"
+								sum := sum + span.		"fill boundary (this row)"
+							].
+							parity := parity + 1.
+						].
+						((lastCorner = $L) & (c = $7)) ifTrue: [
+							(parity even) ifTrue: [	"L---7, left outside"
+								rowSum := rowSum + 1.	"fill beneath 7"
+								sum := sum + span.	"fill boundary (this row)"
+							] ifFalse: [	"L---7, left inside"
+								rowSum := rowSum + span + 1.	"fill beneath edge"
+							].
+							parity := parity + 1.
+						].
+						((lastCorner = $L) & (c = $J)) ifTrue: [
+							(parity even) ifTrue: [	"L---J, left ouside"
+								sum := sum + span + 1.	"fill boundary (this row)"
+							] ifFalse: [	"L---J, left inside"
+								rowSum := rowSum + span + 1.	"fill beneath edge"
+							].
+						].
+						lastCorner := $/.
 					].
 				].
 				lastX := x.
