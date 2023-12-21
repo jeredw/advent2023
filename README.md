@@ -283,3 +283,15 @@ I wrote a bunch of classes today because I felt like it, and even some tests.
 With all the inequalities and integer valued variables, I was afraid I was
 going to have to stay up late again to do some kind of linear programming or
 CSP malarkey, but fortunately it was just some easy counting today.
+
+## Day 20
+
+Part 1 today was a nice little circuit simulation where polymorphic message
+passing was a great way to organize the program.  Then like with all OO
+programs, part 2 required some intrusive changes to pass state around to the
+code that actually needed it, and the program got uglier.
+
+But it was still pretty nice working with Smalltalk today.  When I was testing
+my parsing code, I used the "print it" menu, then in the inspector dialog I
+clicked "explore" and got a nice tree view graph of my objects.  I also
+realized that Esc brings up the menu, so I am having to click slightly less!
