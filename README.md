@@ -308,3 +308,16 @@ The real input - but not the test case! - turned out to be carefully
 constructed not to need remainders!  I used wolfram alpha to fit a quadratic
 formula to the damn thing and put it to bed.  Good riddance, I hope tomorrow is
 an emulator or simulation of some sort and not another grid search problem.
+
+## Day 22
+
+Today I learned more about the object model by trying to get my classes to
+print nicely in the inspector (`printOn` and `printString`) and work right in a
+hashed collection (`hash` and `=`).  I went poking in the `Point` class and
+found a bunch of cool methods that would have come in very handy for past
+problems.
+
+For part two, we had to do a disjoint union type thing, and I wanted to deep
+copy a dictionary of sets for my cheesy n^3 solution.  But strangely `dict
+deepCopy` gave me back a corrupt object.  I can only imagine what shenanigans
+`deepCopy` must get up to in this language.
