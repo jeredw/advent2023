@@ -295,3 +295,16 @@ But it was still pretty nice working with Smalltalk today.  When I was testing
 my parsing code, I used the "print it" menu, then in the inspector dialog I
 clicked "explore" and got a nice tree view graph of my objects.  I also
 realized that Esc brings up the menu, so I am having to click slightly less!
+
+## Day 21
+
+Part 1 was easy and part 2 was nuts.  I pretty quickly got the idea that I
+needed to add up a diamond checkerboard pattern of even and odd tiles and some
+partial tile remainders, but computing the remainders looked ugly.  So I gave
+up, and went Christmas shopping and went to a nice holiday concert, but I
+couldn't stop thinking about it.
+
+The real input - but not the test case! - turned out to be carefully
+constructed not to need remainders!  I used wolfram alpha to fit a quadratic
+formula to the damn thing and put it to bed.  Good riddance, I hope tomorrow is
+an emulator or simulation of some sort and not another grid search problem.
