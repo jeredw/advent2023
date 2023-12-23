@@ -6,3 +6,4 @@ Squeaklets
 *.pr
 *.gif
 Workspace*
+package-cache

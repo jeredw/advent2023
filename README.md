@@ -321,3 +321,37 @@ For part two, we had to do a disjoint union type thing, and I wanted to deep
 copy a dictionary of sets for my cheesy n^3 solution.  But strangely `dict
 deepCopy` gave me back a corrupt object.  I can only imagine what shenanigans
 `deepCopy` must get up to in this language.
+
+## Day 23
+
+Today's problem was to find the longest path through a maze which is NP hard,
+so I just used a brute force search.  Backtracking through the whole maze was
+too slow so I extracted a graph and searched that instead.
+
+In more exciting news, I've had several big Smalltalk breakthroughs.
+
+Last night, I finally downloaded the [Squeak
+sources](https://files.squeak.org/sources_files/), and now I can see source
+code for libraries with actual comments and variable names in the browser!  I
+don't know why this was missing before but it makes the system much more
+usable.  I wish I'd done this weeks ago.
+
+I also found and read about half of [Squeak by
+Example](https://github.com/hpi-swa-lab/SqueakByExample-english/releases/download/6.0/SBE-6.0.pdf).
+I'm pretty comfortable with the language now, but I have really not been taking
+full advantage of the GUI.  It's still goofy looking and quirky and definitely
+not intuitive, but if you read the documentation, it's actually pretty cool.
+For example, the "Method finder" has a cool feature where you can type in an
+input and a desired output, and it will find methods that would give that
+output.
+
+But probably the coolest thing is that the debugger lets you edit code and keep
+going, with some support for rewinding the current method.  Supposedly some
+people just program in the debugger all the time, since they can see the state
+of the program that way.  I tried this out and it worked pretty well.
+
+You know, my brute force search today was really not all that slow.  Compared
+to other dynamic languages I've tried, Smalltalk is pretty snappy.  If only my
+program wasn't trapped in a VM image... apparently there is some strange
+parallel universe of Smalltalk software with a novel version control system but
+I am not sure I want to go there, yet.
