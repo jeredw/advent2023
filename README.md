@@ -355,3 +355,20 @@ to other dynamic languages I've tried, Smalltalk is pretty snappy.  If only my
 program wasn't trapped in a VM image... apparently there is some strange
 parallel universe of Smalltalk software with a novel version control system but
 I am not sure I want to go there, yet.
+
+## Day 24
+
+Today was really not a good time.  I ran out of time on Christmas eve and had
+to get help to solve part 2.  Linear algebra in Smalltalk is really ugly -
+Squeak doesn't ship with good libraries, and coding it is ugly, not least
+because the language lacks arithmetic operator precedence.
+
+Using `Float`s gave the wrong answer for part one!  Fortunately Smalltalk has
+big integers and rational arithmetic, but this was a little surprising.
+
+In part two, I had the right idea but ran out of time, and needed help to get
+the right linear system without ruining my holiday.  So I gave up and found a
+[reddit post](https://www.reddit.com/r/adventofcode/comments/18q40he/2023_day_24_part_2_a_straightforward_nonsolver/)
+with a good derivation.  Then I was faced with trying to solve this in
+Smalltalk.  Rather than code Gauss-Jordan elimination, I tried using numpy, but
+again, we're out of float range, so instead I used sympy.
