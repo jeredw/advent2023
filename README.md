@@ -372,3 +372,17 @@ the right linear system without ruining my holiday.  So I gave up and found a
 with a good derivation.  Then I was faced with trying to solve this in
 Smalltalk.  Rather than code Gauss-Jordan elimination, I tried using numpy, but
 again, we're out of float range, so instead I used sympy.
+
+## Day 25
+
+Today also sucked.  I realized I needed a min cut and coded up [Karger's
+algorithm](https://en.wikipedia.org/wiki/Karger%27s_algorithm) but created many
+bugs mostly due to self-edges.  Once I'd debugged my program, it worked fine on
+the test graph but never found the right cut for the real graph.  Instead of
+coding up
+[Stoer–Wagner](https://en.wikipedia.org/wiki/Stoer%E2%80%93Wagner_algorithm) I
+gave up, drew a picture of my graph, manually found the edges to cut and
+counted up the component sizes.
+
+I will probably go back and tidy up some of my programs, and then write all
+this up in the coming days.
