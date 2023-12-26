@@ -378,12 +378,12 @@ really not bad, especially after I found `Matrix stringForReadout`.  I don't
 think anyone would claim this is a great notation for matrix math though.
 
 ```smalltalk
-		(j + 1) to: (m rowCount) do: [:k | |t|
-			t := m at: k at: j.
-			1 to: (m columnCount) do: [:i |
-				m at: k at: i put: ((m at: k at: i) - (t * (m at: j at: i))).
-			].
-		].
+(j + 1) to: (m rowCount) do: [:k | |t|
+	t := m at: k at: j.
+	1 to: (m columnCount) do: [:i |
+		m at: k at: i put: ((m at: k at: i) - (t * (m at: j at: i))).
+	].
+].
 ```
 
 ## Day 25
