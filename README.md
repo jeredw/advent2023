@@ -373,6 +373,19 @@ with a good derivation.  Then I was faced with trying to solve this in
 Smalltalk.  Rather than code Gauss-Jordan elimination, I tried using numpy, but
 again, we're out of float range, so instead I used sympy.
 
+*Edit 12/26*: I went back and coded up a simple elimination loop.  It was
+really not bad, especially after I found `Matrix stringForReadout`.  I don't
+think anyone would claim this is a great notation for matrix math though.
+
+```smalltalk
+		(j + 1) to: (m rowCount) do: [:k | |t|
+			t := m at: k at: j.
+			1 to: (m columnCount) do: [:i |
+				m at: k at: i put: ((m at: k at: i) - (t * (m at: j at: i))).
+			].
+		].
+```
+
 ## Day 25
 
 Today also sucked.  I realized I needed a min cut and coded up [Karger's
