@@ -398,5 +398,23 @@ coding up
 gave up, drew a picture of my graph, manually found the edges to cut and
 counted up the component sizes.
 
-I will probably go back and tidy up some of my programs, and then write all
-this up in the coming days.
+*Edit 12/26*: I went back and translated the excellent and readable [networkx
+Stoer–Wagner](https://networkx.org/documentation/stable/reference/algorithms/generated/networkx.algorithms.connectivity.stoerwagner.stoer_wagner.html)
+library to Smalltalk to solve day 25 for real.  Wikipedia and the papers I
+found online were generally pretty bad, and after an hour of trying, reading
+networkx code was really the best way to understand the algorithm.  This wasn't
+that bad, but it was painful to debug.  Trickiest bugs were 1) accidentally
+feeding in the graph after removing the min cut edges I already knew! 2) off by
+one indexing fun when
+
+```python
+for i in range(n - 1):
+for j in range(n - i - 2):
+```
+
+had to become
+
+```smalltalk
+1 to: (n - 1) do: [:i |
+1 to: (n - (i - 1) - 2) do: [:j |
+```
